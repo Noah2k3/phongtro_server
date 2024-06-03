@@ -119,7 +119,7 @@ export const createNewPostsService = (body, userId) => new Promise(async (resolv
         await db.Attribute.create({
             id: attributesId,
             price: +body.priceNumber < 1 ? `${+body.priceNumber * 1000000} đồng/tháng` : `${body.priceNumber} triệu/tháng`,
-            acreage: `${areaNumber} m2`,
+            acreage: `${body.areaNumber} m2`,
             published: moment(new Date).format('DD/MM/YYYY'),
             hashtag
         })
